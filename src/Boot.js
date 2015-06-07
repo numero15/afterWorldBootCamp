@@ -1,10 +1,10 @@
 //The Boot state loads preloader assets in the preload hook method and sets up Phaser game settings like scaling and input pointers via the create method.
 
 //constructor
-function boot(afterWorldBootCamp) {};
+function Boot(afterWorldBootCamp) {};
  
  //prototypes
-boot.prototype = {
+Boot.prototype = {
 
   preload: function() {
   	//A method called when a state starts. It is used for loading assets before anything else.
@@ -21,6 +21,6 @@ boot.prototype = {
     //this.scale.pageAlignVertically = true;
     //this.scale.setScreenSize(true);
     this.stage.smoothed = false;
-    this.state.start('Load');
+    afterWorldBootCamp.state.start('Loader');
   }
 }

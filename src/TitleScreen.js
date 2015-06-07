@@ -9,6 +9,7 @@ TitleScreen.prototype = {
   },
   create: function() {
     // A method called after preload, used for creating game objects.
+    afterWorldBootCamp.state.start('PlayState');
   },
   update: function() {
     // A method called for every frame, which is used for user polling and collision detection.
