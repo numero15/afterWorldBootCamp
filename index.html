@@ -4,12 +4,13 @@
         <meta charset="utf-8"/>
 		<title>afterWorldBootCamp</title>
 		<!--loading all our classes-->
-    	<script src="phaser.min.js"></script>
+    	<script src="phaser.js"></script>
     	<script src="src/Boot.js"></script>
-		<script src="src/Loader.js"></script>
-        <script src="src/TitleScreen.js"></script>
-        <script src="src/PlayState.js"></script>
-        <script src="src/GameManager.js"></script>
+		  <script src="src/Loader.js"></script>
+      <script src="src/TitleScreen.js"></script>
+      <script src="src/PlayState.js"></script>
+      <script src="src/ConvoyWindow.js"></script>
+      <script src="src/GameManager.js"></script>
 
     </head>
 
@@ -17,5 +18,32 @@
     	<!--the div which will contain ou game-->
     	<div id="gameDiv"></div>
 
+
+  <script>
+  var videoElement = document.getElementById("gameDiv");
+    
+  function toggleFullScreen() {
+    if (!document.mozFullScreen && !document.webkitFullScreen) {
+      if (videoElement.mozRequestFullScreen) {
+        videoElement.mozRequestFullScreen();
+      } else {
+        videoElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+      }
+    } else {
+      if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else {
+        document.webkitCancelFullScreen();
+      }
+    }
+  }
+  
+  document.addEventListener("keydown", function(e) {
+    if (e.keyCode == 32) {
+      toggleFullScreen();
+    }
+  }, false);
+
+</script>
     </body>
 </html>

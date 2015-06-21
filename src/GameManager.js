@@ -1,5 +1,5 @@
 
-var afterWorldBootCamp = new Phaser.Game(1000,200, Phaser.AUTO, 'gameDiv');
+var afterWorldBootCamp = new Phaser.Game(1000,200, Phaser.CANVAS, 'gameDiv', null, false, false);
 
 afterWorldBootCamp.state.add('Boot', Boot);
 afterWorldBootCamp.state.add('Loader', Loader);
